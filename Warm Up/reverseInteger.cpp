@@ -1,11 +1,12 @@
 #include <iostream>
 using namespace std;
-
 int reverseNumber(int num){
   int temp=num;
   int reverseNumber=0;
 
   while (temp!=0) {
+    if ((reverseNumber > 2^31 / 10) || (reverseNumber < -2^32 / 10)) return 0;
+
     reverseNumber=(reverseNumber*10)+temp%10;
     temp/=10;
   }
