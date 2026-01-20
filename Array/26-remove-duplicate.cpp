@@ -2,7 +2,6 @@
 using namespace std;
 
 int uniqueElement(int arr[],int size){
-
     int curIndex=0;
     for (int i = 0; i < size; i++)
         if (arr[curIndex]<arr[i]) {
@@ -23,7 +22,7 @@ int main() {
 
     int arr[]={1,1,2};
     int len= sizeof(arr)/sizeof(arr[0]);
-  cout<<uniqueElement(arr,len)<<endl;
+    cout<<uniqueElement(arr,len)<<endl;
     Display(arr,len);
 
   return 0;

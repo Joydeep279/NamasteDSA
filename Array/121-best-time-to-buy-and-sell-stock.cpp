@@ -2,35 +2,29 @@
 #include <limits.h>
 using namespace std;
 
-int bestTime(int prices[],int size)
+int bestTime(int arr[], int size)
 {
-  int maxElement=INT_MIN,maxIndex=0;
+  int minElement=arr[0],maxProfit=-9999;
 
-  for (int i = 0; i < size; i++) {
-   if (prices[i]>maxElement) {
-       maxIndex=i;
-       maxElement=prices[i];
-   }
- }
+  for (int i = 1; i < size; i++) {
 
- int minElement;
+      if (arr[i]<minElement) {
+        minElement=arr[i];
+      }z
+      if (maxProfit<(arr[i]-minElement)) {
+        maxProfit=arr[i]-minElement;
+      }
 
-for (int i = 0; i <= maxIndex; i++) {
-  if (maxElement>prices[i]) {
-        minElement=prices[i];
   }
+  return maxProfit;
 }
 
-  return maxElement-minElement;
-}
-
-
-
-int main() {
-
-    int prices[] = {2,4,1};
-    int size=sizeof(prices)/sizeof(prices[0]);
-    cout<<bestTime(prices,size)<<"\n";
+int main()
+{
+//                0
+  int prices[] = {7,1,5,3,6,4};
+  int size = sizeof(prices) / sizeof(prices[0]);
+  cout << bestTime(prices, size) << "\n";
 
   return 0;
 }
