@@ -10,7 +10,7 @@ int bestTime(int arr[], int size)
 
       if (arr[i]<minElement) {
         minElement=arr[i];
-      }z
+      }
       if (maxProfit<(arr[i]-minElement)) {
         maxProfit=arr[i]-minElement;
       }
