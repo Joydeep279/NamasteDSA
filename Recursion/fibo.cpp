@@ -10,6 +10,6 @@ int Fibo(int n)
 
 int main() {
 // 0 1 1 2 3 5 8
-  cout<<Fibo(6);
+  cout<<Fibo(1000);
   return 0;
 }
