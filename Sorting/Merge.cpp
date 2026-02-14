@@ -32,9 +32,9 @@ void mergeArray(int arr[],int left,int mid,int right) {
   arr[mainIndex++]=temp1[i++];
   }
 
-  while (j<size2) {
+  while (j<size2)
   arr[mainIndex++]=temp2[j++];
-  }
+
 
     return;
 }
@@ -42,9 +42,9 @@ void mergeArray(int arr[],int left,int mid,int right) {
 
 void Merge(int arr[],int left,int right){
 
-  if (left>=right) {
+  if (left>=right)
     return;
-  }
+
 
   int mid=(left+right)/2;
   Merge(arr,left,mid);
@@ -58,9 +58,8 @@ int main() {
   int size = sizeof(nums) / sizeof(nums[0]);
   Merge(nums,0,size-1);
 
-  for (int i = 0; i < size; i++) {
+  for (int i = 0; i < size; i++)
     cout<<nums[i]<<" ";
-  }
 cout<<"\n";
 
   return 0;

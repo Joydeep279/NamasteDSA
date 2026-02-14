@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Node{
@@ -113,6 +114,42 @@ void deleteAtIndex(int index)
   }
 }
 
+void reverse()
+{
+  Node* curPtr=head;
+  Node* prevPtr=NULL;
+
+  while (curPtr!=NULL) {
+    Node* nextPtr=curPtr->nextPtr;
+    curPtr->nextPtr=prevPtr;
+    prevPtr=curPtr;
+    curPtr=nextPtr;
+  }
+  head=prevPtr;
+}
+
+bool isPalindrome()
+{
+    int stackPointer=-1;
+    vector<int> stack;
+    Node* slowPtr=head;
+    Node* fastPtr=head;
+    while (fastPtr->nextPtr!=NULL||fastPtr!=NULL) {
+      stack.push_back(slowPtr->data);
+      stackPointer++;
+      slowPtr= slowPtr->nextPtr;
+      fastPtr= fastPtr->nextPtr->nextPtr;
+    }
+    while (slowPtr!=NULL) {
+
+      if (slowPtr->data!=stack[stackPointer--]) {
+        return false;
+      }
+      slowPtr=slowPtr->nextPtr;
+    }
+    return true;
+}
+
 void  display()
 {
   Node* temp=head;
@@ -143,8 +180,10 @@ int main() {
   display();
 
   deleteAtIndex(3);
-  
+cout<<"Reverse Logic:\n";
   display();
-
+  reverse();
+  display();
+  cout<<isPalindrome();
   return 0;
 }
