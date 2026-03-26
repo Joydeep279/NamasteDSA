@@ -2,34 +2,30 @@
 #include<unordered_map>
 using namespace std;
 
-bool isomorphic(string s,string t){
+bool isomorphic(string s,string r){
 
   int sLen=s.length();
-  int tLen=t.length();
+  int tLen=r.length();
 
   if (sLen!=tLen) {
     return false;
   }
 
-  unordered_map<char,char> HashMap;
+  unordered_map<char,char> StoR;
+  unordered_map<char,char> RtoS;
 
-// STEP 1
-  for (int i = 0; i < sLen; i++)
-      HashMap[s[i]]=t[i];
-// STEP 2
-  for (int i = 0; i < tLen; i++)
-     s[i]=HashMap.at(s[i]);
-// STEP 3
-
-for (const auto& pair : HashMap) {
-    std::cout << pair.first << " : " << pair.second << std::endl;
-}
-
-  for (int i = 0; i < sLen; i++) {
-    if (s[i]!=t[i]) {
-      cout<<s[i]<<" : "<<t[i]<<endl;
+  for (size_t i = 0; i < sLen; i++) {
+    if (StoR.count(s[i])==0&&RtoS.count(r[i])==0) {
+      StoR[s[i]]=r[i];
+      RtoS[r[i]]=s[i];
+    }else if (StoR.count(s[i])&&StoR[s[i]]!=r[i]) {
       return false;
     }
+    else if (RtoS.count(r[i])&&RtoS[r[i]]!=s[i]) {
+      return false;
+    }
+
+    e;.
   }
 
   return true;
