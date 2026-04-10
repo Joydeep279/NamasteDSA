@@ -5,43 +5,23 @@
 
 using namespace std;
 
- vector<int> nextGreaterElement(vector<int>& subArray, vector<int>& mainArr)
-{
-  unordered_map<int,int> ngtPair;
-  stack<int> st;
-  int mainArrLen=mainArr.size();
-ngtPair[mainArr[mainArrLen-1]]=-1;
-st.push(mainArr[mainArrLen-1]);
+   vector<int> nextGreaterElement(vector<int>& subArray, vector<int>& mainArr)
+  {
+    unordered_map<int,int> ngtPair;
+    stack<int> st;
 
-
-for (int i = mainArrLen-2; i >=0 ; i--) {
-    if (!st.empty()&&st.top()>mainArr[i]) {
-      ngtPair[mainArr[i]]=st.top();
-      st.push(mainArr[i]);
-    }
- else   if(!st.empty()&&st.top()<mainArr[i]){
-      while (!st.empty()&&mainArr[i]>st.top()) {
-      st.pop();
-      }
-      if (st.empty()) {
-        ngtPair[mainArr[i]]=-1;
-      }
-      else{
-        ngtPair[mainArr[i]]=st.top();
-      }
-      st.push(mainArr[i]);
+    for (int i = mainArr.size()-1; i >=0; i--) {
+      /* code */
+      
     }
 
 
+  for (size_t i = 0; i < subArray.size(); i++) {
+    subArray[i]=ngtPair[subArray[i]];
+  }
 
-}
-
-for (size_t i = 0; i < subArray.size(); i++) {
-  subArray[i]=ngtPair[subArray[i]];
-}
-
-return subArray;
- }
+  return subArray;
+   }
 
 
 
