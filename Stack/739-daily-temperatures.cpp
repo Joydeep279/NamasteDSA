@@ -17,7 +17,7 @@ for (int i = temperatures.size()-1; i >=0 ; i--) {
   st.push(i);
 }
 
-return result;
+return result.resize(len/2);
 }
 
 int main() {
