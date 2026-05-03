@@ -45,7 +45,7 @@ vector<int> mainArr={1,5,4,2,8,7,};
 vector<int> result=nextGreater(subArray,mainArr);
 
 for (size_t i = 0; i < result.size(); i++) {
-  cout<<result[i]<<" ";
+  cout<<result[i]<<" "; 
 }
 cout<<endl;
   return 0;
